@@ -9,38 +9,49 @@ public class UIManeger : MonoBehaviour
     // インスペクターウィンドウからゲームオブジェクトを設定する
     [SerializeField] GameObject quizPanel;
     [SerializeField] GameObject resultPanel;
+    [SerializeField] GameObject menuPanel;
+    [SerializeField] GameObject playGuidePanel;
 
     // Start is called before the first frame update
-    void Start()
-    {
-        // openQuizPanel メソッドを呼び出す
-        openQuizPanel();
+    void Start() {
+        closeQuizPanel();
+        closeResultPanel();
+        closePlayGuidePanel();
     }
 
     // Update is called once per frame
-    void Update()
-    {
-        
+    void Update() {
     }
 
-    // resultPanel を開く
-    public void openResultPanel()
-    {
-        // quizPanel.SetActive(false);
+    public void openQuizPanel() {
+        quizPanel.SetActive(true);
+    }
+    
+    public void closeQuizPanel() {
+        quizPanel.SetActive(false);
+    }
+
+    public void openResultPanel() {
         resultPanel.SetActive(true);
     }
 
-    // resultPanel を閉じる
-    public void closeResultPanel()
-    {
-        quizPanel.SetActive(true);
+    public void closeResultPanel() {
         resultPanel.SetActive(false);
     }
 
-    // quizPanel を開く
-    public void openQuizPanel()
-    {
-        quizPanel.SetActive(true);
-        resultPanel.SetActive(false);
+    public void openMenuPanel() {
+        menuPanel.SetActive(true);
+    }
+
+    public void closeMenuPanel() {
+        menuPanel.SetActive(false);
+    }
+
+    public void openPlayGuidePanel() {
+        playGuidePanel.SetActive(true);
+    }
+
+    public void closePlayGuidePanel() {
+        playGuidePanel.SetActive(false);
     }
 }
